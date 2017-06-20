@@ -1,0 +1,15 @@
+digraph g {
+	size = "10, 10";
+	node [style = filled, shape = "circle"];
+	v2 [color="blue", pos = "18.253910,21.558883!"];
+	v1 [color="blue", pos = "21.737794,0.000000!"];
+	t [color="red", pos = "40.000000,13.987016!"];
+	s [color="red", pos = "0.000000,7.523831!"];
+	v2 -> t [label = "6.000000", color="black" ];
+	v1 -> t [label = "9.000000", color="black" ];
+	v1 -> v2 [label = "2.000000", color="black" ];
+	s -> v2 [label = "5.000000", color="black" ];
+	s -> v1 [label = "1.000000", color="black" ];
+label="../input.in";
+fontsize=50;
+}
