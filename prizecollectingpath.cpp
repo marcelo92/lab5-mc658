@@ -73,7 +73,7 @@ int main(int argc, char* argv[]){
 	}
     printf("RESULTADO:");
 	for ( int i=0; i<(int)path.size(); i++ )
-		std::cout << g.id(path[i]) << " ";
+		std::cout << node_names[path[i]] << " ";
 	std::cout << std::endl;
 	return 0;
 }
@@ -98,7 +98,7 @@ int read_pcpath(string input_file){
 		string v1, v2;
 		double c_tmp;
 		kinput >> v1 >> v2 >> c_tmp;
-		ListDigraph::Arc a = g.addArc(ref[v1], ref[v2]);	//source, target
+		ListDigraph::Arc a = g.addArc(ref[v2], ref[v1]);	//source, target
 		costs[a] = c_tmp;
 	}
 
