@@ -54,9 +54,9 @@ int main(int argc, char* argv[]){
 	if ( !read_pcpath(input_file) ) return 1;
 
 	for ( ListDigraph::NodeIt u(g); u!=INVALID; ++u ){
-		if ( node_names[u].compare("s") )
+		if ( node_names[u].compare("s")==0 )
 			s=u;
-		if ( node_names[u].compare("t") )
+		if ( node_names[u].compare("t")==0 )
 			t=u;
 	}
 
@@ -71,9 +71,9 @@ int main(int argc, char* argv[]){
 		//set_pdfreader("xpdf");
 		show_graph_mygraphlib(input_file);
 	}
-    printf("RESULTADO:");
+
 	for ( int i=0; i<(int)path.size(); i++ )
-		std::cout << node_names[path[i]] << " ";
+		std::cout << g.id(path[i]) << " ";
 	std::cout << std::endl;
 	return 0;
 }
@@ -98,7 +98,7 @@ int read_pcpath(string input_file){
 		string v1, v2;
 		double c_tmp;
 		kinput >> v1 >> v2 >> c_tmp;
-		ListDigraph::Arc a = g.addArc(ref[v2], ref[v1]);	//source, target
+		ListDigraph::Arc a = g.addArc(ref[v1], ref[v2]);	//source, target
 		costs[a] = c_tmp;
 	}
 
